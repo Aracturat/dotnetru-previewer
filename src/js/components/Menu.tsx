@@ -5,7 +5,7 @@ import htmlToImage from 'html-to-image';
 import { connect } from "react-redux";
 
 import { selectInputDisabledState, selectSelectedFieldFontSize } from "../selectors/preview";
-import { setInputDisabledState, setSelectedFieldFontSize } from "../actions/preview";
+import { setInputDisabledState, setReporterPhotoUrl, setSelectedFieldFontSize } from "../actions/preview";
 
 import '../../scss/Menu.scss';
 
@@ -20,7 +20,8 @@ const mapStateToProps = (state: any) => {
 const mapDispatchToProps = (dispatch: any) => {
     return {
         setInputDisabledState: (isDisabled: boolean) => dispatch(setInputDisabledState(isDisabled)),
-        setSelectedFieldFontSize: (fontSize: number) => dispatch(setSelectedFieldFontSize(fontSize))
+        setSelectedFieldFontSize: (fontSize: number) => dispatch(setSelectedFieldFontSize(fontSize)),
+        setReporterPhotoUrl: (url: string) => dispatch(setReporterPhotoUrl(url))
     };
 };
 
@@ -32,7 +33,8 @@ const Menu: React.FC<MenuPropType> = (props) => {
         isInputDisabled,
         selectedFieldFontSize,
         setInputDisabledState,
-        setSelectedFieldFontSize
+        setSelectedFieldFontSize,
+        setReporterPhotoUrl
     } = props;
 
     const saveAsImage = () => {
@@ -47,6 +49,10 @@ const Menu: React.FC<MenuPropType> = (props) => {
                     link.click();
                 });
         }
+    };
+
+    const handleFileChange = (event: any) => {
+        setReporterPhotoUrl(URL.createObjectURL(event.target.files[0]));
     };
 
     return (
@@ -84,6 +90,9 @@ const Menu: React.FC<MenuPropType> = (props) => {
                     color="primary" onClick={ saveAsImage }
                 >Save as Image
                 </Button>
+            </div>
+            <div className="menu__save-as-image">
+                <input type="file" onChange={ handleFileChange } />
             </div>
         </div>
     );

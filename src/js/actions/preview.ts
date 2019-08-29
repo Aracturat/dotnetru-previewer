@@ -1,4 +1,9 @@
-import { SET_SELECTED_FIELD_FONT_SIZE, SET_INPUT_DISABLED_STATE, SET_SELECTED_FIELD } from "../constants/action-names";
+import {
+    SET_SELECTED_FIELD_FONT_SIZE,
+    SET_INPUT_DISABLED_STATE,
+    SET_SELECTED_FIELD,
+    SET_REPORTER_PHOTO_URL
+} from "../constants/action-names";
 
 export function setInputDisabledState(isDisabled: boolean) {
     return {
@@ -23,6 +28,15 @@ export function setSelectedField(field: string) {
         type: SET_SELECTED_FIELD,
         payload: {
             field
+        }
+    };
+}
+
+export function setReporterPhotoUrl(photoUrl: string) {
+    return {
+        type: SET_REPORTER_PHOTO_URL,
+        payload: {
+            photoUrl
         }
     };
 }

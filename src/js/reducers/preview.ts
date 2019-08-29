@@ -1,4 +1,10 @@
-import { InferActionTypes, SET_SELECTED_FIELD_FONT_SIZE, SET_INPUT_DISABLED_STATE, SET_SELECTED_FIELD } from "../constants/action-names";
+import {
+    InferActionTypes,
+    SET_SELECTED_FIELD_FONT_SIZE,
+    SET_INPUT_DISABLED_STATE,
+    SET_SELECTED_FIELD,
+    SET_REPORTER_PHOTO_URL
+} from "../constants/action-names";
 
 import * as ActionCreators from '../actions/preview';
 
@@ -31,6 +37,8 @@ export function previewReducer(state = defaultPreviewState, action: ActionTypes)
             return setSelectedField(state, action.payload.field);
         case SET_INPUT_DISABLED_STATE:
             return setInputDisabledState(state, action.payload.isDisabled);
+        case SET_REPORTER_PHOTO_URL:
+            return setReporterPhotoUrl(state, action.payload.photoUrl);
         default:
             return state;
     }
@@ -62,3 +70,12 @@ function setInputDisabledState(state: IPreview, isDisabled: boolean): IPreview {
         isInputDisabled: isDisabled
     };
 }
+
+
+function setReporterPhotoUrl(state: IPreview, photoUrl: string): IPreview {
+    return {
+        ...state,
+        reporterPhotoUrl: photoUrl
+    };
+}
+
