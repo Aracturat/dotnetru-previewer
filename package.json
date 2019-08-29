@@ -3,13 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.3.3",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.2",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
+    "@types/react-redux": "^7.1.2",
+    "html-to-image": "^0.1.1",
+    "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-easy-crop": "^1.14.0",
+    "react-native-image-pan-zoom": "^2.1.11",
+    "react-redux": "^7.1.0",
+    "react-responsive-pinch-zoom-pan": "^0.2.2",
+    "react-rnd": "^10.0.0",
     "react-scripts": "3.1.1",
+    "react-scroll-wheel-handler": "^1.0.9",
+    "react-textfit": "^1.1.0",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
     "typescript": "3.5.3"
   },
   "scripts": {
@@ -32,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-easy-crop": "^1.13.0"
   }
 }

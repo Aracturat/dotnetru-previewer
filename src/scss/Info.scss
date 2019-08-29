@@ -1,0 +1,48 @@
+.info {
+  padding: 35px 0 60px 35px;
+
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  &__talk-name {
+    width: 100%;
+    flex: 1 1 auto;
+    padding: 0 0 0 10px;
+    font-family: 'Calibri', serif;
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  &__bottom-section {
+    flex: 0 0 196px;
+    display: flex;
+
+    margin-top: 35px;
+    max-height: 196px;
+  }
+
+  &__community-icon {
+    flex: 0 0 196px;
+    height: 196px;
+
+    margin-right: 35px;
+  }
+
+  &__reporter-name {
+    flex: 1 1 auto;
+    align-self: flex-end;
+
+    padding: 0 0 10px 10px;
+    max-height: 100%;
+
+    font-family: 'Calibri', serif;
+
+    overflow: hidden;
+  }
+
+
+
+}

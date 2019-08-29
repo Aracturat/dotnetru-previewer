@@ -1,0 +1,42 @@
+.photo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+
+  &--disabled {
+    pointer-events: none;
+  }
+
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__horizontal-lines,
+  &__vertical-lines {
+    position: absolute;
+    border-style: solid;
+    border-color: red;
+    pointer-events: none;
+  }
+
+  &__horizontal-lines {
+    width: 100%;
+    height: 50%;
+    top: 15%;
+
+    border-width: 1px 0;
+  }
+
+  &__vertical-lines {
+    width: 50%;
+    height: 100%;
+    left: 25%;
+
+    border-width: 0 1px;
+  }
+}

@@ -1,0 +1,20 @@
+.menu {
+  display: flex;
+  align-items: center;
+  margin: 0 -10px;
+
+  &__disable-inputs,
+  &__font-size,
+  &__save-as-image {
+    margin: 0 10px;
+  }
+
+  &__font-size {
+    width: 200px;
+  }
+
+  &__font-size-slider {
+    margin-right: 10px;
+  }
+
+}
