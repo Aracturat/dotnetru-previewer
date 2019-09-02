@@ -9,6 +9,19 @@
     margin: 0 10px;
   }
 
+  &__select-photo-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__select-photo-label {
+    cursor: pointer;
+  }
+
   &__font-size {
     width: 200px;
   }

@@ -91,8 +91,17 @@ const Menu: React.FC<MenuPropType> = (props) => {
                 >Save as Image
                 </Button>
             </div>
-            <div className="menu__save-as-image">
-                <input type="file" onChange={ handleFileChange } />
+            <div className="menu__select-photo">
+                <input className="menu__select-photo-input"
+                    id="menu__select-photo"
+                    type="file"
+                    onChange={ handleFileChange }
+                />
+                <label className="menu__select-photo-label" htmlFor="menu__select-photo">
+                    <Button component="span" variant="contained">
+                        Upload Photo
+                    </Button>
+                </label>
             </div>
         </div>
     );
