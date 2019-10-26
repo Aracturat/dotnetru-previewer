@@ -5,6 +5,10 @@
   grid-auto-columns: max-content;
   align-items: center;
 
+  &__select-photo {
+    margin-right: 10px;
+  }
+
   &__select-photo-input {
     width: 0.1px;
     height: 0.1px;

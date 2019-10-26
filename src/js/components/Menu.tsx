@@ -62,17 +62,23 @@ const Menu: React.FC<MenuPropType> = (props) => {
 
     return (
         <div className="menu">
-            <div className="menu__disable-inputs">
-                <FormControlLabel
-                    control={
-                        <Switch checked={ isInputDisabled }
-                            onChange={ (e: any) => setInputDisabledState(e.target.checked) }
-                            inputProps={ { 'aria-label': 'Disable inputs toogle' } }
-                            color="primary"
-                        />
-                    } label="Disable inputs"
-                />
+            <div className="menu__select-community">
+                <SelectCommunityModal/>
             </div>
+
+            <div className="menu__select-photo">
+                <input className="menu__select-photo-input"
+                    id="menu__select-photo"
+                    type="file"
+                    onChange={ handleFileChange }
+                />
+                <label className="menu__select-photo-label" htmlFor="menu__select-photo">
+                    <Button component="span" variant="contained">
+                        Upload Photo
+                    </Button>
+                </label>
+            </div>
+
             <div className="menu__font-size">
                 <FormControlLabel
                     className="menu__font-size"
@@ -89,21 +95,19 @@ const Menu: React.FC<MenuPropType> = (props) => {
                     } label="Font size"
                 />
             </div>
-            <div className="menu__select-photo">
-                <input className="menu__select-photo-input"
-                    id="menu__select-photo"
-                    type="file"
-                    onChange={ handleFileChange }
+
+            <div className="menu__disable-inputs">
+                <FormControlLabel
+                    control={
+                        <Switch checked={ isInputDisabled }
+                            onChange={ (e: any) => setInputDisabledState(e.target.checked) }
+                            inputProps={ { 'aria-label': 'Disable inputs toogle' } }
+                            color="primary"
+                        />
+                    } label="Disable inputs"
                 />
-                <label className="menu__select-photo-label" htmlFor="menu__select-photo">
-                    <Button component="span" variant="contained">
-                        Upload Photo
-                    </Button>
-                </label>
             </div>
-            <div className="menu__select-community">
-               <SelectCommunityModal/>
-            </div>
+
             <div className="menu__save-as-image">
                 <Button
                     variant="contained"
