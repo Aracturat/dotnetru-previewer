@@ -1,11 +1,14 @@
 .preview {
   width: 1280px;
   height: 720px;
+  border: 1px solid #ddd;
+  border-bottom: none;
 
   position: relative;
   display: flex;
 
   background-color: rgb(242, 242, 242);
+  overflow: hidden;
 
   &__info {
     flex: 0 0 680px;
