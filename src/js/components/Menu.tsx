@@ -8,6 +8,7 @@ import { selectInputDisabledState, selectSelectedFieldFontSize } from "../select
 import { setInputDisabledState, setReporterPhotoUrl, setSelectedFieldFontSize } from "../actions/preview";
 
 import '../../scss/Menu.scss';
+import SelectCommunityModal from "./SelectCommunityModal";
 
 
 const mapStateToProps = (state: any) => {
@@ -51,6 +52,10 @@ const Menu: React.FC<MenuPropType> = (props) => {
         }
     };
 
+    const selectCommunity = () => {
+        alert('click');
+    };
+
     const handleFileChange = (event: any) => {
         setReporterPhotoUrl(URL.createObjectURL(event.target.files[0]));
     };
@@ -84,13 +89,6 @@ const Menu: React.FC<MenuPropType> = (props) => {
                     } label="Font size"
                 />
             </div>
-            <div className="menu__save-as-image">
-                <Button
-                    variant="contained"
-                    color="primary" onClick={ saveAsImage }
-                >Save as Image
-                </Button>
-            </div>
             <div className="menu__select-photo">
                 <input className="menu__select-photo-input"
                     id="menu__select-photo"
@@ -102,6 +100,16 @@ const Menu: React.FC<MenuPropType> = (props) => {
                         Upload Photo
                     </Button>
                 </label>
+            </div>
+            <div className="menu__select-community">
+               <SelectCommunityModal/>
+            </div>
+            <div className="menu__save-as-image">
+                <Button
+                    variant="contained"
+                    color="primary" onClick={ saveAsImage }
+                >Save as Image
+                </Button>
             </div>
         </div>
     );

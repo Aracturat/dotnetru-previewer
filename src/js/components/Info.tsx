@@ -32,7 +32,7 @@ const Info: React.FC<InfoPropType> = ({ talkFontSize, reporterFontSize, isInputD
                 style={ { fontSize: talkFontSize } }
                 onClick={ e => setSelectedField('talk') }
             >
-                Запускаем в K8S микросервисы на .NET Core - наш опыт
+                Название доклада
             </div>
             <div className="info__bottom-section">
                 <div className="info__community-icon">
@@ -44,7 +44,7 @@ const Info: React.FC<InfoPropType> = ({ talkFontSize, reporterFontSize, isInputD
                     style={ { fontSize: reporterFontSize } }
                     onClick={ e => setSelectedField('reporter') }
                 >
-                    Загир <br/> Акназаров
+                    Имя <br/> Фамилия
                 </div>
             </div>
         </div>

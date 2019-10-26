@@ -2,7 +2,7 @@ import {
     SET_SELECTED_FIELD_FONT_SIZE,
     SET_INPUT_DISABLED_STATE,
     SET_SELECTED_FIELD,
-    SET_REPORTER_PHOTO_URL
+    SET_REPORTER_PHOTO_URL, SET_COMMUNITY
 } from "../constants/action-names";
 
 export function setInputDisabledState(isDisabled: boolean) {
@@ -28,6 +28,15 @@ export function setSelectedField(field: string) {
         type: SET_SELECTED_FIELD,
         payload: {
             field
+        }
+    };
+}
+
+export function setCommunity(community: string) {
+    return {
+        type: SET_COMMUNITY,
+        payload: {
+            community
         }
     };
 }

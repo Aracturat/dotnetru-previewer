@@ -3,7 +3,7 @@ import {
     SET_SELECTED_FIELD_FONT_SIZE,
     SET_INPUT_DISABLED_STATE,
     SET_SELECTED_FIELD,
-    SET_REPORTER_PHOTO_URL
+    SET_REPORTER_PHOTO_URL, SET_COMMUNITY
 } from "../constants/action-names";
 
 import * as ActionCreators from '../actions/preview';
@@ -13,7 +13,7 @@ type ActionTypes = InferActionTypes<typeof ActionCreators>;
 export interface IPreview {
     fontSizes: { [key: string]: number }
     selectedField: string | null;
-    communityIconUrl: string;
+    community: string;
     reporterPhotoUrl: string;
     isInputDisabled: boolean;
 }
@@ -24,8 +24,8 @@ export const defaultPreviewState: IPreview = {
         reporter: 50
     },
     selectedField: 'TITLE',
-    communityIconUrl: 'https://raw.githubusercontent.com/AnatolyKulakov/SpbDotNet/master/Swag/nskdotnet-squared-logo/nskdotnet-squared-logo-200.png',
-    reporterPhotoUrl: 'https://raw.githubusercontent.com/DotNetRu/Audit/master/db/speakers/Zagir-Aknazarov/avatar.jpg',
+    community: 'DotNetRu',
+    reporterPhotoUrl: 'https://www.sccpre.cat/mypng/detail/8-87398_computer-icons-login-person-black-black-and-white.png',
     isInputDisabled: false
 };
 
@@ -39,6 +39,8 @@ export function previewReducer(state = defaultPreviewState, action: ActionTypes)
             return setInputDisabledState(state, action.payload.isDisabled);
         case SET_REPORTER_PHOTO_URL:
             return setReporterPhotoUrl(state, action.payload.photoUrl);
+        case SET_COMMUNITY:
+            return setCommunity(state, action.payload.community);
         default:
             return state;
     }
@@ -76,6 +78,13 @@ function setReporterPhotoUrl(state: IPreview, photoUrl: string): IPreview {
     return {
         ...state,
         reporterPhotoUrl: photoUrl
+    };
+}
+
+function setCommunity(state: IPreview, community: string): IPreview {
+    return {
+        ...state,
+        community
     };
 }
 

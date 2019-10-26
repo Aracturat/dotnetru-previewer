@@ -1,13 +1,9 @@
 .menu {
-  display: flex;
+  display: grid;
+  grid-gap: 20px;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
   align-items: center;
-  margin: 0 -10px;
-
-  &__disable-inputs,
-  &__font-size,
-  &__save-as-image {
-    margin: 0 10px;
-  }
 
   &__select-photo-input {
     width: 0.1px;

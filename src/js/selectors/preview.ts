@@ -12,7 +12,12 @@ export const selectReporterPhotoUrl = () =>
 export const selectCommunityIconUrl = () =>
     createSelector(
         selectPreview,
-        preview => preview.communityIconUrl
+        preview => {
+            let community = preview.community.toLowerCase();
+            let baseUrl = `https://raw.githubusercontent.com/AnatolyKulakov/SpbDotNet/master/Swag`;
+
+            return `${ baseUrl }/${ community }-squared-logo/${ community }-squared-logo-200.png`;
+        }
     );
 
 export const selectFontSize = (field: string) =>
@@ -33,3 +38,8 @@ export const selectInputDisabledState = () =>
         preview => preview.isInputDisabled
     );
 
+export const selectCommunity = () =>
+    createSelector(
+        selectPreview,
+        preview => preview.community
+    );
